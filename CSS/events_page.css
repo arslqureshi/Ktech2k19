@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-image: url("../images/back-color.jpg");
+  background-repeat: none;
+  background-size: cover;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0.25;
+}
+
+.back_heading {
+  position: absolute;
+  opacity: 0.1;
+  font-size: 3rem;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header {
+  z-index: 9;
+  display: flex;
+  color: white;
+  min-width: 100%;
+  align-items: center;
+  height: 15%;
+  padding: 1rem;
+}
+.logo {
+  width: 10%;
+}
+
+.register_button {
+  border: 1px solid white;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: 2rem;
+  padding: 1rem 0;
+  transition: 0.5s all;
+}
+
+.register_button a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+}
+
+.register_button:hover {
+  box-shadow: 0px 0px 10px 2px white;
+  background: #ddd;
+}
+
+.register_button:hover a {
+  color: rgb(8, 43, 107);
+}
+
+.section {
+  color: white;
+}
+
+/*  Main content styling   */
+
+#home {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 10rem;
+}
+
+.landing {
+  margin-top: 5rem;
+  width: 60%;
+  margin: 10rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "heading heading"
+    "para logo";
+}
+
+.landing_heading h1 {
+  font-size: 3.5rem;
+  /* font-size: 5vw; */
+  margin-bottom: 1.25rem;
+  grid-area: heading;
+  border-bottom: 2px solid white;
+}
+
+.landing_para {
+  font-size: 2rem;
+  /* font-size: 2.5vw; */
+  grid-area: para;
+}
+
+.landing_logo {
+  grid-area: logo;
+}
+
+/*  EventS  */
+
+#events {
+  /* height: 200px;
+  margin: auto;
+  background: red; */
+  color: black;
+}
+
+.event_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 10rem;
+  grid-column-gap: 1rem;
+  width: 75%;
+  margin: 7rem auto 4rem auto;
+  text-align: center;
+}
+
+.cards {
+  overflow: hidden;
+  max-width: 80%;
+  display: grid;
+  grid-template-columns: 1fr;
+  background: #fff;
+  border-radius: 10px;
+  filter: blur(0.6px);
+  box-shadow: 0 4px 8px 3px #111;
+}
+
+.cards:hover {
+  box-shadow: 0 0 8px 3px #2772b4;
+  cursor: pointer;
+  filter: blur(0);
+}
+
+.organizer_name {
+  background: #034f84;
+}
+
+.cards h3,
+.cards h4 {
+  line-height: 2.5rem;
+}
+
+.organizer_image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.organizer_image img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.event_name {
+  background: #4285f4;
+  padding: 0.25rem;
+  /* margin: 1rem 0; */
+}
+
+.event_description {
+  line-height: 1.5rem;
+  text-align: left;
+  padding: 0.75rem 1rem;
+}
+
+/* The Modal (background) */
+#mymodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  scrollbar-face-color: #034f84;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal_header {
+  padding: 1.5rem;
+  background: #034f84;
+}
+
+/* Modal Content/Box */
+#myModalContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1.5rem;
+  background-color: #fefefe;
+  margin: 5% auto; /* 5% from the top and centered */
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 10px;
+  box-shadow: 0 0 8px 2px #555;
+  overflow: hidden;
+}
+
+/* The Close Button */
+#close_btn {
+  color: #fff;
+  opacity: 0.7;
+  display: flex;
+  font-size: 28px;
+  font-weight: bold;
+  width: 0;
+}
+
+#close_btn:hover,
+#close_btn:focus {
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.organizing_team {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-bottom: 1px solid black;
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.modal-content img {
+  border-radius: 100%;
+  display: block;
+  width: 50%;
+  height: 150px;
+  margin: 0 auto;
+  box-shadow: 0 0 5px 1px black;
+}
+
+.organizing_team_details {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 0.5rem;
+}
+
+.description,
+.rules {
+  word-spacing: 4px;
+  line-height: 1.75rem;
+  padding: 0.75rem 1rem;
+}
+
+pre {
+  white-space: pre-wrap; /* css-3 /
+  white-space: -moz-pre-wrap;  / Mozilla, since 1999 /
+  white-space: -pre-wrap;      / Opera 4-6 /
+  white-space: -o-pre-wrap;    / Opera 7 /
+  word-wrap: break-word;       / Internet Explorer 5.5+ */
+}
+
+.judges {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.judge_details {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 0.5rem;
+}
+
+.heading_wrapper {
+  padding: 0 1rem;
+}

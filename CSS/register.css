@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+header {
+  /* position: fixed; */
+  display: flex;
+  color: white;
+  min-width: 100%;
+  align-items: center;
+  background: #004d84;
+  box-shadow: 0px 0px 8px white;
+  /* border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px; */
+}
+.logo {
+  width: 10%;
+  height: 5.5rem;
+}
+
+.register_button {
+  border: 1px solid white;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: 2rem;
+  padding: 1rem 0;
+  transition: 0.5s all;
+}
+
+.register_button a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+}
+
+.register_button:hover {
+  box-shadow: 0px 0px 10px 2px white;
+  background: #ddd;
+}
+
+.register_button:hover a {
+  color: rgb(8, 43, 107);
+}
+
+.main_section {
+  min-height: 88vh;
+  background-image: url("../images/back-color.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  box-shadow: 0px 0px 8px 1px black;
+}
+
+.registration_portal {
+  text-align: center;
+  padding: 0.75rem;
+  line-height: 2rem;
+}
+
+.registration_form_container {
+  padding: 2rem;
+  width: 70%;
+  margin: auto;
+}
+
+.registration_form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 4rem;
+}
+
+.competition_form {
+  width: 60%;
+  margin: auto;
+}
+
+.registration_form_container input[type="text"],
+.registration_form_container input[type="email"],
+.registration_form_container select {
+  min-width: 100%;
+  padding: 0.75rem;
+  margin: 0.75rem 0;
+  box-shadow: 0px 0px 4px 1px white;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.registration_form_container input::placeholder {
+  font-size: 16px;
+}
+
+.registration_form_container input[type="text"]:focus,
+.registration_form_container input[type="email"]:focus,
+.registration_form_container select:focus {
+  box-shadow: 0px 0px 6px 2px rgb(0, 81, 255);
+}
+
+.registration_form_container input[type="text"]:hover,
+.registration_form_container input[type="email"]:hover,
+.registration_form_container select:hover {
+  box-shadow: 0px 0px 6px 2px rgb(0, 81, 255);
+}
+
+#team_name,
+#team_email,
+#competition_names,
+#no_of_members {
+  display: none;
+}
+
+#participant_form {
+  display: grid;
+  grid-gap: 1.75rem;
+}
+
+.participant_grid_1 {
+  grid-template-areas: "member1";
+} /*  These 3 classes are selected from register.js file  */
+
+.participant_grid_2 {
+  grid-template-areas: "member1 member2";
+}
+
+.participant_grid_3 {
+  grid-template-areas: "member1 member2 member3";
+}
+
+#member1 {
+  grid-area: member1;
+}
+
+#member2 {
+  grid-area: member2;
+}
+
+#member3 {
+  grid-area: member3;
+}
+
+.reg_no_container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 0.75rem;
+}
+
+.register_btn_container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+#register_btn {
+  padding: 1.15rem 2.5rem;
+  background: rgb(0, 81, 255);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#register_btn:hover {
+  background-color: rgb(15, 79, 197);
+  box-shadow: 0px 0px 8px white;
+}
+
+/* model */
+.model {
+  display: none;
+  background-color: red;
+  width: 35%;
+  grid-template-columns: 1fr;
+  text-align: center;
+  height: 250px;
+  position: fixed;
+  left: 33%;
+  top: 25%;
+}
+.close {
+  float: right;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+}
+.big-font {
+  font-size: 4.5rem;
+}

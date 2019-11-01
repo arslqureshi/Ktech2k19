@@ -1,0 +1,543 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-image: url("../images/back-color.jpg");
+  background-repeat: none;
+  background-size: cover;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0.25;
+}
+
+.back_heading {
+  position: absolute;
+  opacity: 0.1;
+  font-size: 6rem;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header {
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  color: white;
+  min-width: 100%;
+  align-items: center;
+  height: 15%;
+  padding: 1rem;
+}
+.logo {
+  width: 10%;
+}
+
+.register_button {
+  border: 1px solid white;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: 2rem;
+  padding: 1rem 0;
+  transition: 0.5s all;
+}
+
+.register_button a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+}
+
+.register_button:hover {
+  box-shadow: 0px 0px 10px 2px white;
+  background: #ddd;
+}
+
+.register_button:hover a {
+  color: rgb(8, 43, 107);
+}
+
+.section {
+  color: white;
+}
+
+#menu {
+  position: fixed;
+  top: 30%;
+  left: 2%;
+  height: 30%;
+  z-index: 70;
+  width: 12%;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
+
+#menu li {
+  display: inline-block;
+  margin: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  width: 75%;
+}
+#menu li a .activate span {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+#menu li a {
+  text-decoration: none;
+  color: #000;
+}
+
+#menu li a span {
+  transition: all 0.3s;
+}
+#menu li:hover span {
+  color: white;
+}
+#menu li a {
+  padding: 9px 18px;
+  display: block;
+  color: rgb(175, 175, 175);
+}
+
+.fas,
+.fab {
+  color: rgb(175, 175, 175);
+}
+.activate {
+  box-shadow: 0px 0px 10px 2px #fff;
+  transition: all 0.5s;
+  border-radius: 7px;
+}
+.activate span {
+  color: white;
+  font-size: 16px;
+}
+.activate:hover span {
+  color: white;
+}
+
+/*  Main content styling   */
+
+.landing {
+  width: 60%;
+  margin: auto auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "heading heading"
+    "para logo";
+}
+
+.landing_heading h1 {
+  font-size: 4.5rem;
+  font-size: 5vw;
+  margin-bottom: 1.25rem;
+  grid-area: heading;
+  border-bottom: 2px solid white;
+}
+
+.landing_para {
+  font-size: 2rem;
+  font-size: 2.5vw;
+  grid-area: para;
+}
+
+.landing_logo {
+  grid-area: logo;
+}
+
+/*  About ktech  */
+
+.about_ktech_container {
+  width: 50%;
+  margin: auto auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.about_ktech_heading {
+  font-size: 2.5rem;
+  /* font-size: 3.5vw; */
+}
+
+.about_ktech_para {
+  font-size: 1.5rem;
+  /* font-size: 2vw; */
+}
+
+/* ktech team */
+
+.about_team_container {
+  max-width: 70%;
+  margin: auto auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.team {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* grid-column-gap: 1rem; */
+}
+
+.member {
+  /* padding: 1rem; */
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.member_name {
+  margin: 0.75rem 0;
+}
+
+.member_name h1 {
+  font-size: 2vw;
+}
+
+.member_name p {
+  font-size: 1vw;
+}
+
+.image {
+  border: 3px solid white;
+  border-radius: 100%;
+  /* width: 200px;
+  height: 200px; */
+  max-width: 60%;
+  height: auto;
+  overflow: hidden;
+  background: white;
+  margin: auto auto;
+  transition: 0.5s all;
+}
+
+.image img {
+  /* width: 100%;
+  height: 100%;*/
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 100%;
+  transition: all 0.3s;
+}
+
+.image:hover img {
+  transform: scale(0.95, 0.95);
+}
+
+/* Events page  */
+
+.about_events_container {
+  width: 70%;
+  margin: auto auto;
+}
+
+.events_details {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* grid-column-gap: 1rem; */
+}
+
+.event {
+  padding: 1rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1rem;
+}
+
+.event_image {
+  width: 70%;
+  height: 16vw;
+  border: 3px solid white;
+  border-radius: 100%;
+  /* max-width: 90%; */
+  overflow: hidden;
+  background: white;
+  margin: auto auto;
+  transition: 0.5s all;
+}
+
+.event_image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  transition: all 0.3s;
+}
+
+.event_image:hover img {
+  transform: scale(0.95, 0.95);
+}
+
+/* .image{
+    border: 3px solid white;
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    background: white;
+    margin: auto auto;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    transition: all 0.3s;
+}
+
+.image:hover img{
+    transform: scale(0.95,0.95);
+} */
+
+/* Gallery section  */
+
+.gallery_container {
+  width: 50%;
+  padding-top: 5rem;
+  margin: auto auto;
+}
+
+/* Contact Section  */
+
+.contact_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 0.5rem;
+}
+
+.designers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 40%;
+  margin: auto auto;
+  font-size: 1rem;
+}
+
+.designer_image {
+  /* width: 250px;
+  height: 250px; */
+  max-width: 60%;
+  height: auto;
+  border: 3px solid white;
+  border-radius: 100%;
+  overflow: hidden;
+  background: white;
+  margin: auto auto;
+  transition: 0.5s all;
+}
+
+.designer_image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 100%;
+  transition: all 0.3s;
+}
+
+.designer_image:hover img {
+  transform: scale(0.95, 0.95);
+}
+
+.contact_details {
+  padding: 0.25rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 70%;
+  margin: auto auto;
+  box-shadow: 0px 0px 10px 3px black;
+}
+
+.contact_info {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: rgb(7, 40, 61);
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.main_form {
+  margin: 0.75rem 0 0.5rem 0;
+  display: grid;
+  grid-row-gap: 0.5rem;
+  grid-template-areas:
+    "name email"
+    "message message";
+  padding: 1rem;
+}
+
+.contact_form {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: white;
+  color: black;
+  padding: 1.5rem;
+  box-shadow: 0px 0px 10px 3px rgb(7, 40, 61) inset;
+}
+
+.contact_form span {
+  font-size: 2rem;
+}
+
+.main_form input,
+textarea {
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 0.75rem;
+  resize: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#user_name {
+  grid-area: name;
+}
+
+#user_email {
+  grid-area: email;
+}
+#user_message {
+  width: 80%;
+}
+#submit_btn {
+  border-radius: 100%;
+  padding: 0.75rem;
+  border: none;
+  background: #4285f4;
+  transition: all 0.3s;
+}
+#submit_btn:hover {
+  box-shadow: 0 0 8px 2px rgb(7, 40, 61);
+}
+
+#message_btn {
+  grid-area: message;
+}
+
+.main_form input {
+  width: 70%;
+}
+
+input:focus,
+textarea:focus {
+  border-bottom: 3px solid #4285f4;
+  outline: none;
+}
+
+/*  Media Queries   */
+
+/* @media only screen and (max-width: 600px) {
+  ...;
+} */
+
+/* Small devices (portrait tablets and large phones, 600px and up) /
+@media only screen and (min-width: 600px) {...} 
+
+/ Medium devices (landscape tablets, 768px and up) /
+@media only screen and (min-width: 768px) {...} 
+
+ 
+
+/ Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) / */
+@media only screen and (max-width: 1000px) {
+  .back_heading {
+    font-size: 5.25rem;
+  }
+
+  header {
+    height: 13%;
+  }
+  .logo {
+    width: 10%;
+  }
+
+  .register_button {
+    padding: 0.8rem 0;
+  }
+
+  .register_button a {
+    padding: 0.8rem 2rem;
+  }
+
+  /*  Main content styling   */
+
+  .landing_heading h1 {
+    font-size: 6vw;
+  }
+
+  .landing_para {
+    font-size: 3.5vw;
+  }
+
+  /*  About ktech  */
+
+  .about_ktech_heading {
+    font-size: 2.5rem;
+    font-size: 4vw;
+  }
+
+  .about_ktech_para {
+    font-size: 1.5rem;
+    font-size: 2.5vw;
+  }
+
+  /* Events page  */
+
+  .event_image {
+    height: 15.5vw;
+  }
+
+  /* Contact Section  */
+
+  .designers {
+    font-size: 15px;
+  }
+
+  .designer_image {
+    /* width: 250px;
+    height: 250px; */
+    max-width: 60%;
+    height: auto;
+    border: 3px solid white;
+    border-radius: 100%;
+    overflow: hidden;
+    background: white;
+    margin: auto auto;
+    transition: 0.5s all;
+  }
+
+  .designer_image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 100%;
+    transition: all 0.3s;
+  }
+
+  .contact_form span {
+    font-size: 1.5rem;
+  }
+}
