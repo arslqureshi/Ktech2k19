@@ -9,7 +9,7 @@ new fullpage("#fullpage", {
   css3: true,
   fixedElements: "#myModal",
   //   fixedElements: "#header",
-  onLeave: function(origin, destination, index) {
+  onLeave: function (origin, destination, index) {
     if (destination["anchor"] == "Events") {
       $(".event_container")
         .delay(350)
@@ -19,7 +19,7 @@ new fullpage("#fullpage", {
     }
   },
 
-  afterResize: function(width, height) {
+  afterResize: function (width, height) {
     if (width < 1200) {
       $("#menu").css("display", "none");
     } else {
@@ -37,7 +37,7 @@ function openModal(str) {
     true
   );
   ajax.send();
-  ajax.onreadystatechange = function() {
+  ajax.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("myModalContent").innerHTML = this.responseText;
       // Get the modal
@@ -58,7 +58,7 @@ function closeModal() {
 var modal = document.getElementById("myModal");
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }

@@ -16,7 +16,7 @@ function getCategory(str) {
     true
   );
   ajax.send();
-  ajax.onreadystatechange = function() {
+  ajax.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById(
         "competition_names"
@@ -38,7 +38,7 @@ function getMembersPerTeam(str) {
     true
   );
   ajax.send();
-  ajax.onreadystatechange = function() {
+  ajax.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       //alert(this.response);
       document.getElementById("no_of_members").innerHTML = this.responseText;
@@ -136,7 +136,7 @@ function getTeamName() {
     true
   );
   ajax.send();
-  ajax.onreadystatechange = function() {
+  ajax.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       var val = this.responseText;
       if (val == 1) {
@@ -154,49 +154,56 @@ function getTeamName() {
 //end
 //var model = (document.getElementsByClassName("model").style.display = "none");
 function displaymodel() {
-  category_type=document.getElementById("category_type").value;
-  competition_names=document.getElementById("competition_names").value;
-  team_name=document.getElementById("team_name").value;
-  team_email=document.getElementById("team_email").value;
-  no_of_members=document.getElementById("no_of_members").value;
-  check=false;
-  if(no_of_members!=""){
-    for(i=1;i<=no_of_members;i++){
-      id="member"+i+"-name";
-      
-      member=document.getElementById(id).value;
-      id="member"+i+"-reg-year";
+  category_type = document.getElementById("category_type").value;
+  competition_names = document.getElementById("competition_names").value;
+  team_name = document.getElementById("team_name").value;
+  team_email = document.getElementById("team_email").value;
+  no_of_members = document.getElementById("no_of_members").value;
+  check = false;
+  if (no_of_members != "") {
+    for (i = 1; i <= no_of_members; i++) {
+      id = "member" + i + "-name";
 
-      reg_year=document.getElementById(id).value;
-      id="member"+i+"-reg-department";
- 
-      reg_dept=document.getElementById(id).value;
-      id="member"+i+"_reg_roll";
-    
-      reg_no=document.getElementById(id).value;
-      if(member!="" && reg_year!="" && reg_dept!="" && reg_no!=""){
-        check=true;
-      }
-      else{
-        check=false;
+      member = document.getElementById(id).value;
+      id = "member" + i + "-reg-year";
+
+      reg_year = document.getElementById(id).value;
+      id = "member" + i + "-reg-department";
+
+      reg_dept = document.getElementById(id).value;
+      id = "member" + i + "_reg_roll";
+
+      reg_no = document.getElementById(id).value;
+      if (member != "" && reg_year != "" && reg_dept != "" && reg_no != "") {
+        check = true;
+      } else {
+        check = false;
       }
     }
   }
-  
-  
+
+
   // alert(category_type);
   // alert(competition_names);
   // alert(team_name);
   // alert(team_email);
   // alert(no_of_members);
 
-  if(category_type!="" && competition_names!="" && team_name!="" && team_email!="" && no_of_members!="" && check){
+  if (category_type != "" && competition_names != "" && team_name != "" && team_email != "" && no_of_members != "" && check) {
     console.log("in main if");
     swal({
-      title: "Registration",
-      text: "You clicked the button!",
+      title: "Registration Complete",
+      text: "An Email will be sent to you to acknowledge you registration. If you don't recieve the email within a day then contact us.",
       icon: "success",
-      button: "OK",
-    });
+      timer: 6000,
+      buttons: false
+    }).then(
+      function () {},
+      // handling the promise rejection
+      function (dismiss) {
+        if (dismiss === 'timer') {
+          //console.log('I was closed by the timer')
+        }
+      });
   }
 }

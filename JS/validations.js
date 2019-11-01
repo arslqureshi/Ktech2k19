@@ -20,7 +20,8 @@ function numval(str, id) {
   if (flag == false) {
     document.getElementById(id).value = "";
     document.getElementById(id).style.borderColor = "red";
-    document.getElementById(id).placeholder = "Incorrect value for phone number";
+    document.getElementById(id).placeholder =
+      "Incorrect value for phone number";
   } else {
     document.getElementById(id).style.borderColor = "black";
     document.getElementById(id).placeholder = "Cell Number 03211234567";
@@ -31,7 +32,8 @@ function letterval(str, id) {
   for (var i = 0; i < str.length; i++) {
     if (
       !(str[i] >= "a" && str[i] <= "z") &&
-      !(str[i] >= "A" && str[i] <= "Z") && !(str[i]==" ")
+      !(str[i] >= "A" && str[i] <= "Z") &&
+      !(str[i] == " ")
     ) {
       flag = false;
       break;

@@ -1,5 +1,6 @@
 new fullpage("#fullpage", {
   navigation: true,
+  scrollOverflow: true,
   navigationPosition: "right",
   anchors: [
     "Home",
@@ -22,10 +23,8 @@ new fullpage("#fullpage", {
   scrollingSpeed: 900,
   menu: "#menu",
   onLeave: function(origin, destination, index) {
-    console.log(origin);
-    console.log(destination);
-    console.log(index);
     if (destination["anchor"] == "Home") {
+      scrollOverflow: true;
       $("#Home_left").addClass("activate");
       $("#About_Ktech_left").removeClass("activate");
       $("#About_team_left").removeClass("activate");
@@ -33,6 +32,7 @@ new fullpage("#fullpage", {
       $("#Gallery_left").removeClass("activate");
       $("#Contact_left").removeClass("activate");
     } else if (destination["anchor"] == "About_Ktech") {
+      scrollOverflow: true;
       $("#Home_left").removeClass("activate");
       $("#About_Ktech_left").addClass("activate");
       $("#About_team_left").removeClass("activate");
@@ -40,6 +40,7 @@ new fullpage("#fullpage", {
       $("#Gallery_left").removeClass("activate");
       $("#Contact_left").removeClass("activate");
     } else if (destination["anchor"] == "About_Team") {
+      scrollOverflow: true;
       $("#Home_left").removeClass("activate");
       $("#About_Ktech_left").removeClass("activate");
       $("#About_team_left").addClass("activate");
@@ -47,6 +48,7 @@ new fullpage("#fullpage", {
       $("#Gallery_left").removeClass("activate");
       $("#Contact_left").removeClass("activate");
     } else if (destination["anchor"] == "Events") {
+      scrollOverflow: true;
       $("#Home_left").removeClass("activate");
       $("#About_Ktech_left").removeClass("activate");
       $("#About_team_left").removeClass("activate");
@@ -54,6 +56,7 @@ new fullpage("#fullpage", {
       $("#Gallery_left").removeClass("activate");
       $("#Contact_left").removeClass("activate");
     } else if (destination["anchor"] == "Gallery") {
+      scrollOverflow: true;
       $("#Home_left").removeClass("activate");
       $("#About_Ktech_left").removeClass("activate");
       $("#About_team_left").removeClass("activate");
@@ -61,6 +64,7 @@ new fullpage("#fullpage", {
       $("#Gallery_left").addClass("activate");
       $("#Contact_left").removeClass("activate");
     } else if (destination["anchor"] == "Contact") {
+      scrollOverflow: true;
       $("#Home_left").removeClass("activate");
       $("#About_Ktech_left").removeClass("activate");
       $("#About_team_left").removeClass("activate");
@@ -110,6 +114,30 @@ new fullpage("#fullpage", {
     }
   },
 
+  // afterLoad: function(origin, destination, index) {
+  //   if ($(window).width() < 1260) {
+  //     $("#menu").css("display", "none");
+  //   } else {
+  //     $("#menu").css("display", "block");
+  //   }
+  // },
+
+  afterLoad: function(origin, destination, index) {
+    if (destination["anchor"] == "Home") {
+      scrollOverflow: true;
+    } else if (destination["anchor"] == "About_Ktech") {
+      scrollOverflow: true;
+    } else if (destination["anchor"] == "About_Team") {
+      scrollOverflow: true;
+    } else if (destination["anchor"] == "Events") {
+      scrollOverflow: true;
+    } else if (destination["anchor"] == "Gallery") {
+      scrollOverflow: true;
+    } else if (destination["anchor"] == "Contact") {
+      scrollOverflow: true;
+    }
+  },
+
   afterResize: function(width, height) {
     console.log(width);
     console.log(height);
@@ -126,5 +154,5 @@ new fullpage("#fullpage", {
 $("#slider").nivoSlider({
   boxCols: 8,
   boxRows: 4,
-  effect:'fade'
+  effect: "fade"
 });
