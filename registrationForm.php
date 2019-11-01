@@ -10,8 +10,10 @@ include "Include/Connection.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registration | Ktech</title>
     <link href="CSS/register.css" rel="stylesheet">
-    <link href="CSS/all.min.css" rel="stylesheet">
-    <link href="CSS/all.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/css/mdb.min.css" rel="stylesheet">
 
 </head>
 
@@ -19,26 +21,20 @@ include "Include/Connection.php";
     <div id="container">
 
 
-        <header>
-            <div class="logo">
-                <img src="images/logo.png" alt="logo" width="100%" height="100%">
-            </div>
-            <h3>KTECH</h3>
-            <div class="register_button">
-                <a href="index.php">Ktech</a>
-            </div>
-        </header>
+
 
         <div class="main_section">
             <div class="registration_portal">
-                <h1>Register Now</h1>
-                <p>Fill the form and get yourself Registered in exciting events</p>
+                <h1 class="indigo-text display-4 font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInUp">Register Now</h1>
+                <p class="pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 wow fadeInUp" data-wow-delay="0.2s">Get registered
+                    in exciting events</p>
             </div>
-            <div class="registration_form_container">
+            <div class=" registration_form_container">
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="registration_form">
                     <div class="competition_form">
 
-                        <select name="competition_category" id="category_type" required onchange="getCategory(this.value)">
+                        <select name="competition_category" id="category_type" required
+                            onchange="getCategory(this.value)">
 
                             <option selected disabled value="">Choose Category</option>
                             <option value="software">Software</option>
@@ -46,15 +42,18 @@ include "Include/Connection.php";
                             <option value="co-curricular">Co-Curricular</option>
                         </select>
 
-                        <select name="competition_names" id="competition_names" required onchange="getMembersPerTeam(this.value)">
+                        <select name="competition_names" id="competition_names" required
+                            onchange="getMembersPerTeam(this.value)">
                             <!-- DATA IS COMING FROM REGISTER.PHP FILE IN THE INCLUDE FOLDER which is accessed though register.js file USING AJAX -->
                         </select>
 
-                        <input id="team_name" type="text" name="team_name" placeholder="Team Name" required onchange="getTeamName(this.value)">
+                        <input id="team_name" type="text" name="team_name" placeholder="Team Name" required
+                            onchange="getTeamName(this.value)">
 
                         <input id="team_email" type="Email" name="team_email" placeholder="Team Email" required>
 
-                        <select name="no_of_members" id="no_of_members" required onchange="getParticipantForm(this.value)">
+                        <select name="no_of_members" id="no_of_members" required
+                            onchange="getParticipantForm(this.value)">
                             <option selected disabled value="">No Of Team Members</option>
                         </select>
                     </div>
@@ -101,15 +100,8 @@ include "Include/Connection.php";
 
 
                     <div class="register_btn_container">
-                        <input type="submit" name="register" id="register_btn" value="Register" onclick="displaymodel()">
-                    </div>
-
-                    <div class="model" id="mymodel">
-                        <div class="modal_header">
-                            <span class="close" id="close_btn" onclick="closeModal()">&times;</span>
-                        </div>
-                        <span class="fas fa-camera-retro big-font"></span>
-                        <h3>Registration Succesfull</h3>
+                        <input class="btn btn-indigo btn-lg" type="submit" name="register" id="register_btn"
+                            value="Register" onclick="displaymodel()">
                     </div>
                 </form>
             </div>
@@ -121,20 +113,35 @@ include "Include/Connection.php";
 
 
 
-    <script src="JS/jquery.js"></script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js">
+    </script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/js/mdb.min.js">
+    </script>
+
     <script src="JS/register.js"></script>
-    <script src="JS/fontawesome.js"></script>
     <script src="JS/validations.js"></script>
     <script src="JS/sweetalert.js"></script>
 </body>
 
 </html>
 <?php
+$recipient="";
+$registered_in="";
+$flag=false;
 if (isset($_POST['register'])) {
     $team_name = $_POST['team_name'];
     $team_email = $_POST['team_email'];
+    $recipient=$team_email;
     $category = $_POST['competition_category'];
     $competition_name = $_POST['competition_names'];
+    $registered_in=$competition_name;
     $members = $_POST['no_of_members'];
 
     $sql = "SELECT Competition_Id FROM COMPETITION WHERE Competition_Name='$competition_name'";
@@ -159,7 +166,19 @@ if (isset($_POST['register'])) {
 
         $sql = "INSERT INTO Participant(Participant_Name,Participant_RegNo,Team_Id) VALUES(' $member_name','$member_reg_no','$team_id')";
         $run = mysqli_query($conn, $sql);
+        $flag=true;
     }
-    sleep(5);
+
+    if($flag)
+    {
+        $email="ktech19@gmail.com";
+        $message="";
+        $subject="Registration in Ktech";
+        $content="From: KTECH \nEmail: $email  \nMessage: $message";
+        $recipient = "youremail@here.com";
+        $mailheader = "From: $email \r\n";
+        mail($recipient, $subject, $content, $mailheader) or die("Error!");
+    }
+sleep(7);
 }
 ?>

@@ -23,7 +23,7 @@ $run = mysqli_query($conn, $sql);
 <body>
     <!-- The video -->
     <video autoplay muted loop id="myVideo">
-        <source src="../Ktech/videos/Network.mp4" type="video/mp4">
+        <source src="../Ktech/videos/Technology.mp4" type="video/mp4">
     </video>
 
 
@@ -47,7 +47,7 @@ $run = mysqli_query($conn, $sql);
             <div class="landing">
 
                 <div class="landing_heading">
-                    <h1>Hardware EVENTS</h1>
+                    <h1>Hardware Events</h1>
 
                 </div>
 

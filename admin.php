@@ -81,12 +81,12 @@ $run = mysqli_query($conn, $sql);
 
                 <section class="involved_team">
                     <?php while ($organizer = mysqli_fetch_assoc($run)) { ?>
-                        <div class="member">
-                            <img src="Include/<?php echo ($organizer['Organizer_Image']); ?>">
-                            <h2> <?php echo ($organizer['Organizer_Name']); ?> </h2>
-                            <h3> <?php echo ($organizer['Organizer_Cell_No']); ?> </h3>
-                            <p> <?php echo ($organizer['Competition_Name']); ?> </p>
-                        </div>
+                    <div class="member">
+                        <img src="Include/<?php echo ($organizer['Organizer_Image']); ?>" width="200px" height="200px">
+                        <h2> <?php echo ($organizer['Organizer_Name']); ?> </h2>
+                        <h3> <?php echo ($organizer['Organizer_Cell_No']); ?> </h3>
+                        <p> <?php echo ($organizer['Competition_Name']); ?> </p>
+                    </div>
                     <?php } ?>
                 </section>
 
@@ -110,10 +110,16 @@ $run = mysqli_query($conn, $sql);
                                 <option value="co-curricular"> Co-Curricular </option>
                             </select>
 
-                            <input type="text" name="competition_name" id="competition_name" value="" placeholder="Name of Competition" required onchange="validate(this.value)" onkeyup="letterval(this.value,this.id)">
-                            <textarea name="competition_description" id="" cols="30" rows="10" placeholder="Description" required></textarea>
+                            <input type="text" name="competition_name" id="competition_name" value=""
+                                placeholder="Name of Competition" required onchange="validate(this.value)"
+                                onkeyup="letterval(this.value,this.id)">
+                            <input type="text" name="comepetition_date" id="competition_date" value=""
+                                placeholder="yyyy-mm-dd" required>
+                            <textarea name="competition_description" id="" cols="30" rows="10" placeholder="Description"
+                                required></textarea>
 
-                            <textarea name="competition_rules" id="" cols="30" rows="10" placeholder="Rules" required></textarea>
+                            <textarea name="competition_rules" id="" cols="30" rows="10" placeholder="Rules"
+                                required></textarea>
                             <div class="select_group">
                                 <label for="">Memebers Per Team</label>
                                 <select name="members_per_team" id="" required>
@@ -129,7 +135,8 @@ $run = mysqli_query($conn, $sql);
 
                             <h1>Add supervisor</h1>
 
-                            <input type="text" name="supervisor_name" value="" id="supervisor_name" placeholder="Name of Supervisor" required onchange="letterval(this.value,this.id)">
+                            <input type="text" name="supervisor_name" value="" id="supervisor_name"
+                                placeholder="Name of Supervisor" required onchange="letterval(this.value,this.id)">
 
                             <input type="text" name="supervisor_email" placeholder="Email of Supervisor" required>
 
@@ -143,7 +150,8 @@ $run = mysqli_query($conn, $sql);
 
                             <h1>Add organizer</h1>
 
-                            <input type="text" name="organizer_name" value="" placeholder="Name of organizer" id="organizer_name" required onchange="letterval(this.value,this.id)">
+                            <input type="text" name="organizer_name" value="" placeholder="Name of organizer"
+                                id="organizer_name" required onchange="letterval(this.value,this.id)">
 
                             <div class="reg_no_selection">
                                 <select name="organizer_reg_year" id="">
@@ -167,14 +175,16 @@ $run = mysqli_query($conn, $sql);
 
                                     for ($a = 1; $a <= 50; $a++) {
                                         ?>
-                                        <option value=" <?php echo ($a); ?> "><?php echo ($a); ?></option>
+                                    <option value=" <?php echo ($a); ?> "><?php echo ($a); ?></option>
                                     <?php
-                                }
-                                ?>
+                                    }
+                                    ?>
                                 </select>
                             </div>
 
-                            <input type="text" class="validate" name="organizer_cell_no" placeholder="Cell Number 03211234567" id="organizer_cell_no" onchange="numval(this.value,this.id)">
+                            <input type="text" class="validate" name="organizer_cell_no"
+                                placeholder="Cell Number 03211234567" id="organizer_cell_no"
+                                onchange="numval(this.value,this.id)">
 
                             <div>
                                 <input type="file" name="organizer_image">
@@ -187,7 +197,8 @@ $run = mysqli_query($conn, $sql);
 
                             <h1>Add Co-organizer</h1>
 
-                            <input type="text" name="co_organizer_name" value="" id="co_organizer_name" placeholder="Name of Co-organizer" required onchange="letterval(this.value,this.id)">
+                            <input type="text" name="co_organizer_name" value="" id="co_organizer_name"
+                                placeholder="Name of Co-organizer" required onchange="letterval(this.value,this.id)">
 
                             <div class="reg_no_selection">
                                 <select name="co_organizer_reg_year" id="">
@@ -211,14 +222,15 @@ $run = mysqli_query($conn, $sql);
 
                                     for ($a = 1; $a <= 50; $a++) {
                                         ?>
-                                        <option value=" <?php echo ($a); ?> "><?php echo ($a); ?></option>
+                                    <option value=" <?php echo ($a); ?> "><?php echo ($a); ?></option>
                                     <?php
-                                }
-                                ?>
+                                    }
+                                    ?>
                                 </select>
                             </div>
 
-                            <input type="text" name="co_organizer_cell_no" id="co_organizer_cell_no" placeholder="Cell Number 03211234567" onchange="numval(this.value,this.id)">
+                            <input type="text" name="co_organizer_cell_no" id="co_organizer_cell_no"
+                                placeholder="Cell Number 03211234567" onchange="numval(this.value,this.id)">
 
                             <div>
                                 <input type="file" name="co_organizer_image">
@@ -287,24 +299,26 @@ $run = mysqli_query($conn, $sql);
                                 while ($result = mysqli_fetch_assoc($run)) {
                                     ?>
 
-                                    <tr>
-                                        <td> <?php echo ($result['Competition_Name']);   ?></td>
-                                        <td> <?php echo ($result['Competition_Category']);  ?></td>
-                                        <td> <?php echo ($result['Members_Per_Team']);  ?></td>
-                                        <td> <?php echo ($result['Supervisor_Name']);  ?></td>
-                                        <td> <?php echo ($result['Organizer_Name']);  ?></td>
-                                        <td> <?php echo ($result['Co_Organizer_Name']);  ?></td>
-                                        <td> <?php echo ($result['Total_Judges']);  ?></td>
-                                        <?php $comp_id =  $result['Competition_Id']; ?>
-                                        <td> <a href="include/editCompetition.php?id=<?php echo $comp_id; ?>" class="edit_btn">Edit</a> </td>
-                                        <td> <a id="delete_event_btn" class="delete_btn" onclick="getconfirm( <?php echo $comp_id; ?> );">Delete</a> </td>
-                                    </tr>
+                            <tr>
+                                <td> <?php echo ($result['Competition_Name']);   ?></td>
+                                <td> <?php echo ($result['Competition_Category']);  ?></td>
+                                <td> <?php echo ($result['Members_Per_Team']);  ?></td>
+                                <td> <?php echo ($result['Supervisor_Name']);  ?></td>
+                                <td> <?php echo ($result['Organizer_Name']);  ?></td>
+                                <td> <?php echo ($result['Co_Organizer_Name']);  ?></td>
+                                <td> <?php echo ($result['Total_Judges']);  ?></td>
+                                <?php $comp_id =  $result['Competition_Id']; ?>
+                                <td> <a href="include/editCompetition.php?id=<?php echo $comp_id; ?>"
+                                        class="edit_btn">Edit</a> </td>
+                                <td> <a id="delete_event_btn" class="delete_btn"
+                                        onclick="getconfirm( <?php echo $comp_id; ?> );">Delete</a> </td>
+                            </tr>
 
-                                <?php
+                            <?php
+                                }
+                                //onclick=("getconfirm(<?php echo $result['Competition_Id']; 
                             }
-                            //onclick=("getconfirm(<?php echo $result['Competition_Id']; 
-                        }
-                        ?>
+                            ?>
 
                         </tbody>
                     </table>
@@ -336,17 +350,17 @@ $run = mysqli_query($conn, $sql);
                                     while ($result = mysqli_fetch_assoc($run)) {
                                         ?>
 
-                                        <tr>
-                                            <td> <?php echo ($result['Team_Name']);   ?></td>
-                                            <td> <?php echo ($result['Team_Email']);  ?></td>
-                                            <td> <?php echo ($result['No_Of_Participant']);  ?></td>
-                                            <td> <?php echo ($result['Competition_Name']);  ?></td>
-                                        </tr>
+                                <tr>
+                                    <td> <?php echo ($result['Team_Name']);   ?></td>
+                                    <td> <?php echo ($result['Team_Email']);  ?></td>
+                                    <td> <?php echo ($result['No_Of_Participant']);  ?></td>
+                                    <td> <?php echo ($result['Competition_Name']);  ?></td>
+                                </tr>
 
-                                    <?php
+                                <?php
+                                    }
                                 }
-                            }
-                            ?>
+                                ?>
 
                             </tbody>
                         </table>
@@ -361,37 +375,38 @@ $run = mysqli_query($conn, $sql);
 
             <div id="report" class="tabcontent">
                 <section>
-                <table class="competition_detail_table">
-                            <thead>
-                                <tr>
-                                    <th>Competition Category</th>
-                                    <th>Competition Name</th>
-                                   
-                                    <th>Create PDF report</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $sql = "select Competition_Category,Competition_Name,Competition_Id from competition";
-                                $run = mysqli_query($conn, $sql);
-                                if (mysqli_num_rows($run) > 0) {
-                                    while ($result = mysqli_fetch_assoc($run)) {
-                                        ?>
+                    <table class="competition_detail_table">
+                        <thead>
+                            <tr>
+                                <th>Competition Category</th>
+                                <th>Competition Name</th>
 
-                                        <tr>
-                                            <td> <?php echo ($result['Competition_Category']);   ?></td>
-                                            <td> <?php echo ($result['Competition_Name']);  ?></td>
-                                        
-                                            <td> <a href="pdf/createreport.php?id=<?php echo $result['Competition_Id']; ?>" class="edit_btn">Pdf report</a></td>
-                                        </tr>
+                                <th>Create PDF report</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $sql = "select Competition_Category,Competition_Name,Competition_Id from competition";
+                            $run = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($run) > 0) {
+                                while ($result = mysqli_fetch_assoc($run)) {
+                                    ?>
 
-                                    <?php
+                            <tr>
+                                <td> <?php echo ($result['Competition_Category']);   ?></td>
+                                <td> <?php echo ($result['Competition_Name']);  ?></td>
+
+                                <td> <a href="pdf/createreport.php?id=<?php echo $result['Competition_Id']; ?>"
+                                        class="edit_btn">Pdf report</a></td>
+                            </tr>
+
+                            <?php
                                 }
                             }
                             ?>
 
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
                 </section>
             </div>
 
@@ -409,7 +424,7 @@ $run = mysqli_query($conn, $sql);
 
     <script src="JS/admin.js"></script>
     <script src="JS/validations.js"></script>
-    <script src="JS/sweetalert.js"></script>                       
+    <script src="JS/sweetalert.js"></script>
 </body>
 
 </html>

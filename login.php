@@ -3,10 +3,6 @@ include 'Include/Connection.php';
 session_start();
 $msg = "";
 
-
-
-
-
 ?>
 
 <?php

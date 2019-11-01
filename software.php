@@ -47,7 +47,7 @@ $run = mysqli_query($conn, $sql);
             <div class="landing">
 
                 <div class="landing_heading">
-                    <h1>SOFTWARE EVENTS</h1>
+                    <h1>SOFTWARE Events</h1>
 
                 </div>
 

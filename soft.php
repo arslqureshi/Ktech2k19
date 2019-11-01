@@ -1,6 +1,6 @@
 <?php
 include "Include/Connection.php";
-$sql = "SELECT Organizer_Name,Organizer_Image,COMPETITION.Competition_Id,Competition_Name,SUBSTRING(Competition_Description,1,25) AS Competition_Description FROM COMPETITION INNER JOIN Organizer ON Competition.Competition_Id=Organizer.Competition_Id AND LOWER(Competition_Category)=LOWER('co-curricular')";
+$sql = "SELECT Organizer_Name,Organizer_Image,COMPETITION.Competition_Id,Competition_Name,SUBSTRING(Competition_Description,1,25) AS Competition_Description FROM COMPETITION INNER JOIN Organizer ON Competition.Competition_Id=Organizer.Competition_Id AND LOWER(Competition_Category)=LOWER('software')";
 $run = mysqli_query($conn, $sql);
 ?>
 
@@ -19,7 +19,7 @@ $run = mysqli_query($conn, $sql);
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/mainPagestyle.css">
-    <title>KTECH | Co-Curricular</title>
+    <title>KTECH | Software</title>
 </head>
 
 <body>
@@ -46,7 +46,7 @@ $run = mysqli_query($conn, $sql);
                         <div class="container">
                             <div class="col-md-12 text-center">
                                 <h1 class="display-4 font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInUp"><span
-                                        class="indigo-text font-weight-bold">CO-Curricular</span> Events</h1>
+                                        class="indigo-text font-weight-bold">Software</span> Events</h1>
 
                                 <h5 class="pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 wow fadeInUp"
                                     data-wow-delay="0.2s">It comes
@@ -99,7 +99,7 @@ $run = mysqli_query($conn, $sql);
                                         sit, aspernatur praesentium iste impedit quidem dolor veniam.
                                     </p>
                                     <h4 class="font-weight-bold">Anna Deynah</h4>
-                                    <h6 class="font-weight-bold my-3 indigo-text">Secretary Co-Curricular</h6>
+                                    <h6 class="font-weight-bold my-3 indigo-text">Secretary Software</h6>
                                 </div>
                             </div>
                             <!--First slide-->
@@ -157,7 +157,7 @@ $run = mysqli_query($conn, $sql);
      
                         
                          <div class="view overlay">
-                             <img class="card-img-top" src="Include/' . $result['Organizer_Image'] . '" alt="Organizer_Image" width="200px" height="200px">
+                             <img class="card-img-top" src="Include/' . $result['Organizer_Image'] . '" alt="Organizer_Image" width="250px" height="300px">
                             
                                  <div class="mask rgba-white-slight"></div>
                             

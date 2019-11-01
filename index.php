@@ -18,9 +18,9 @@
 
 <body>
     <!-- The video -->
-    <video autoplay muted loop id="myVideo">
+    <!-- <video autoplay muted loop id="myVideo">
         <source src="../Ktech/videos/Network.mp4" type="video/mp4">
-    </video>
+    </video> -->
 
 
     <header>
@@ -117,7 +117,10 @@
                 </div>
 
                 <div class="about_ktech_para">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo rerum asperiores repudiandae, molestias eveniet quas reiciendis ratione, accusantium adipisci saepe dolorum ullam a accusamus vitae, sequi neque cupiditate fugiat cumque similique minus sint obcaecati! Non minus ipsum id veniam eveniet? </p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo rerum asperiores repudiandae,
+                        molestias eveniet quas reiciendis ratione, accusantium adipisci saepe dolorum ullam a accusamus
+                        vitae, sequi neque cupiditate fugiat cumque similique minus sint obcaecati! Non minus ipsum id
+                        veniam eveniet? </p>
 
 
                 </div>
@@ -227,7 +230,7 @@
 
                     <div class="event">
                         <div class="event_image">
-                            <a href="software.php"> <img src="images/software.jpg" alt="Software"> </a>
+                            <a href="software.php" target="_blank"> <img src="images/software.jpg" alt="Software"> </a>
                         </div>
                         <div class="event_name">
                             <h1>Software</h1>
@@ -237,7 +240,7 @@
 
                     <div class="event">
                         <div class="event_image">
-                            <a href="hardware.php"> <img src="images/hardware.jpg" alt="Hardware"> </a>
+                            <a href="hardware.php" target="_blank"> <img src="images/hardware.jpg" alt="Hardware"> </a>
                         </div>
                         <div class="event_name">
                             <h1>Hardware</h1>
@@ -247,7 +250,8 @@
 
                     <div class="event">
                         <div class="event_image">
-                            <a href="co-curricular.php"> <img src="images/co-curricular.jpg" alt="Co-Curricular"> </a>
+                            <a href="co-curricular.php" target="_blank"> <img src="images/co-curricular.jpg"
+                                    alt="Co-Curricular"> </a>
                         </div>
                         <div class="event_name">
                             <h1>Co-curricular</h1>
@@ -275,10 +279,10 @@
 
                     <img src="images/gallery4.jpg" data-thumb="images/gallery4.jpg" alt="">
                 </div>
-                </div>
             </div>
+        </div>
 
-        
+
 
         <div class="section" id="contact">
 
@@ -348,9 +352,11 @@
                             <input type="email" name="uemail" id="user_email" placeholder="Your email...">
 
                             <div id="message_btn">
-                                <textarea name="message" id="user_message" rows="5" placeholder="Your Message"></textarea>
+                                <textarea name="message" id="user_message" rows="5"
+                                    placeholder="Your Message"></textarea>
 
-                                <button type="submit" name="send" value="" id="submit_btn"><span class="far fa-paper-plane"> </span> </button>
+                                <button type="submit" name="send" value="" id="submit_btn"><span
+                                        class="far fa-paper-plane"> </span> </button>
                             </div>
 
                         </form>
@@ -367,6 +373,7 @@
     </div>
 
     <script src="JS/jquery.js"></script>
+    <script src="JS/scrolloverflow.min.js"></script>
     <script src="JS/fullpage.js"></script>
     <script src="JS/fontawesome.js"></script>
     <script src="JS/nivo-slider.js"></script>
