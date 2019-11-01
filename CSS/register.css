@@ -2,67 +2,17 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: Helvetica, sans-serif;
+
 }
 
-html,
-body {
-  height: 100%;
-}
 
-#container {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-header {
-  /* position: fixed; */
-  display: flex;
-  color: white;
-  min-width: 100%;
-  align-items: center;
-  background: #004d84;
-  box-shadow: 0px 0px 8px white;
-  /* border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px; */
-}
-.logo {
-  width: 10%;
-  height: 5.5rem;
-}
-
-.register_button {
-  border: 1px solid white;
-  border-radius: 50px;
-  text-decoration: none;
-  margin-left: auto;
-  margin-right: 2rem;
-  padding: 1rem 0;
-  transition: 0.5s all;
-}
-
-.register_button a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  padding: 1rem 2rem;
-}
-
-.register_button:hover {
-  box-shadow: 0px 0px 10px 2px white;
-  background: #ddd;
-}
-
-.register_button:hover a {
-  color: rgb(8, 43, 107);
-}
 
 .main_section {
-  min-height: 88vh;
-  background-image: url("../images/back-color.jpg");
+  min-height: 100vh;
+  background-image: url("../images/landing.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
+  color: black;
   box-shadow: 0px 0px 8px 1px black;
 }
 
@@ -76,17 +26,26 @@ header {
   padding: 2rem;
   width: 70%;
   margin: auto;
+
+
 }
 
 .registration_form {
   display: grid;
   grid-template-columns: 1fr;
-  grid-row-gap: 4rem;
+  grid-row-gap: 3rem;
+
 }
 
 .competition_form {
-  width: 60%;
+  min-width: 75%;
   margin: auto;
+  padding: 1.5rem;
+  background-color: #c5cae941;
+  border-radius: 7px;
+  display: grid;
+  grid-template-columns: 1fr;
+
 }
 
 .registration_form_container input[type="text"],
@@ -95,9 +54,9 @@ header {
   min-width: 100%;
   padding: 0.75rem;
   margin: 0.75rem 0;
-  box-shadow: 0px 0px 4px 1px white;
   border: none;
-  border-radius: 5px;
+  border-bottom: 1px solid black;
+  border-radius: 3px;
   outline: none;
 }
 
@@ -105,16 +64,11 @@ header {
   font-size: 16px;
 }
 
-.registration_form_container input[type="text"]:focus,
-.registration_form_container input[type="email"]:focus,
-.registration_form_container select:focus {
-  box-shadow: 0px 0px 6px 2px rgb(0, 81, 255);
-}
 
 .registration_form_container input[type="text"]:hover,
 .registration_form_container input[type="email"]:hover,
 .registration_form_container select:hover {
-  box-shadow: 0px 0px 6px 2px rgb(0, 81, 255);
+  box-shadow: 0px 0px 1px 2px #303f9f;
 }
 
 #team_name,
@@ -127,18 +81,32 @@ header {
 #participant_form {
   display: grid;
   grid-gap: 1.75rem;
+
+
+}
+
+.member {
+  background-color: #c5cae941;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
 .participant_grid_1 {
   grid-template-areas: "member1";
-} /*  These 3 classes are selected from register.js file  */
+
+}
+
+/*  These 3 classes are selected from register.js file  */
 
 .participant_grid_2 {
   grid-template-areas: "member1 member2";
+
 }
 
 .participant_grid_3 {
-  grid-template-areas: "member1 member2 member3";
+  grid-template-areas: "member1 member2"
+    "member3 member3";
+
 }
 
 #member1 {
@@ -156,23 +124,13 @@ header {
 .reg_no_container {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  grid-gap: 0.75rem;
+  grid-gap: 0.5rem;
 }
 
 .register_btn_container {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   display: flex;
   justify-content: center;
-}
-
-#register_btn {
-  padding: 1.15rem 2.5rem;
-  background: rgb(0, 81, 255);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 18px;
 }
 
 #register_btn:hover {
@@ -192,11 +150,48 @@ header {
   left: 33%;
   top: 25%;
 }
+
 .close {
   float: right;
   padding: 0.5rem 1rem;
   font-size: 2rem;
 }
+
 .big-font {
   font-size: 4.5rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .registration_form_container {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .participant_grid_3 {
+    grid-template-areas:
+      "member1 member2"
+      "member3 member3";
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .participant_grid_3 {
+    grid-template-areas:
+      "member1"
+      "member2"
+      "member3";
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .competition_form {
+    width: 85%;
+    margin: auto;
+  }
+
+  .participant_grid_2 {
+    grid-template-areas:
+      "member1"
+      "member2";
+  }
 }

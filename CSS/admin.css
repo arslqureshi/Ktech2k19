@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   font-family: Helvetica, Arial, sans-serif;
+  color: black;
 }
 
 .active {
@@ -85,17 +86,16 @@ footer {
   grid-area: footer;
   padding: 1rem;
   background: #4285f4;
+  text-align: center;
 }
 
 /*  Main  */
 
 main {
-  color: white;
   grid-area: main;
   padding: 1rem 1.5rem;
-  background: #002b4e;
+  /* background: #002b4e; */
   min-width: 100%;
-  min-height: 77vh;
 }
 
 /*  DASHBOARD STYLING   */
@@ -122,13 +122,14 @@ main {
   background: #5593f7;
   padding: 1.5rem;
   line-height: 2.5rem;
+  box-shadow: 0 0 6px 3px #002b4e;
 }
 
 .involved_team {
   padding: 1rem;
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: auto auto auto;
   grid-gap: 2.5rem;
   text-align: center;
 }
@@ -136,17 +137,16 @@ main {
 .member {
   padding: 1.5rem;
   background: #4285f4;
-  box-shadow: 0 0 5px 2px #5593f7;
+  box-shadow: 0 0 5px 2px #002b4e;
 }
 
 .member img {
-  width: 35%;
-  height: 35%;
+
   border-radius: 100%;
 }
 
 .member h3 {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 }
 
 /*  CREATE COMPETITION STYLING   */
@@ -279,4 +279,10 @@ tbody a {
 .delete_btn:hover,
 .edit_btn:hover {
   opacity: 1;
+}
+
+@media only screen and (max-width: 850px) {
+  .involved_team {
+    grid-template-columns: auto auto;
+  }
 }

@@ -83,9 +83,8 @@ body {
 }
 
 .landing {
-  margin-top: 5rem;
   width: 60%;
-  margin: 10rem auto 0 auto;
+  margin: 12rem auto 0 auto;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-areas:
@@ -286,4 +285,60 @@ pre {
 
 .heading_wrapper {
   padding: 0 1rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .event_container {
+    grid-template-columns: auto auto;
+    width: 80%;
+  }
+
+  .modal-content img {
+    width: 80%;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .landing {
+    width: 50%;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "heading"
+      "para";
+  }
+
+  .landing_heading h1 {
+    font-size: 2rem;
+    font-size: 5vw;
+  }
+
+  .landing_para {
+    font-size: 1rem;
+    font-size: 5vw;
+    grid-area: para;
+  }
+
+  .landing_logo {
+    display: none;
+  }
+
+  .event_container {
+    grid-template-columns: auto;
+    width: 80%;
+  }
+
+  .organizing_team {
+    grid-template-columns: 1fr 1fr;
+    max-width: 80%;
+  }
+  .supervisor {
+    display: none;
+  }
+
+  .judges {
+    grid-template-columns: 1fr;
+    max-width: 50%;
+    grid-row-gap: 2.5rem;
+  }
 }
